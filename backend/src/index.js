@@ -23,7 +23,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL;
 const publicDir = path.join(process.cwd(), "public");
 
 // it's important that you don't parse the webhook event data, it should be in the raw format
-app.use("/api/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
+app.use("/webhooks/clerk", express.raw({ type: "application/json" }), clerkWebhook);
 
 app.use(express.json());
 app.use(cors({ origin: FRONTEND_URL, credentials: true }));
@@ -33,8 +33,8 @@ app.get("/health", (req, res) => {
   res.status(200).json({ ok: true });
 });
 
-app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
+app.use("/auth", authRoutes);
+app.use("/messages", messageRoutes);
 
 // if the public directory exists, serve the static files
 // this is for the production build
