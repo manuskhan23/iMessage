@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && cp -R src dist",
+    "build": "echo 'No build step needed'",
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
     "db:seed": "node src/seeds/user.seed.js"

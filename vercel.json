@@ -8,7 +8,6 @@
     "backend": {
       "root": "backend",
       "routePrefix": "/api",
-      "framework": "nodejs",
       "entrypoint": "src/index.js"
     }
   }
